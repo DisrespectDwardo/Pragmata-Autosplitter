@@ -281,9 +281,9 @@ split
 
 isLoading
 {
-	return vars.bitCheck(current.MeasureDemoSpendingTimeBits, 0) || vars.bitCheck(current.MeasurePauseSpendingTimeBits, 0) || vars.bitCheck(current.MeasurePauseSpendingTimeBits, 5) 
-			|| vars.bitCheck(current.MeasurePauseSpendingTimeBits, 7) || current.EventFade == 1 || current.EventFade == 2 || current.EventFade == 3 || current.MenuFade == 1 
-			|| current.MenuFade == 2 || current.PlayingEvent || current.SkipModuleStep == 2;
+	return vars.bitCheck(current.MeasurePauseSpendingTimeBits, 0) || vars.bitCheck(current.MeasurePauseSpendingTimeBits, 5) 
+			|| vars.bitCheck(current.MeasurePauseSpendingTimeBits, 7) || current.EventFade == 1 || current.EventFade == 2 || current.MenuFade == 1 
+			|| current.MenuFade == 2;
 }
 
 reset
