@@ -112,7 +112,7 @@ onStart
 
 start
 {
-	return current.DemoID == "cs0110" && old.DemoID != "cs0110";
+	return current.DemoID != old.DemoID && (current.DemoID == "cs0010" || current.DemoID == "cs0110");
 }
 
 
