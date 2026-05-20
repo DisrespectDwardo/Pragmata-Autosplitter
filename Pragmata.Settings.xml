@@ -1,10 +1,11 @@
 <Settings>
-    <Setting Id="Main"  Label="Main Game" State="false">
+    <Setting Id="Main"  Label="Main Game" State="true">
 		<Setting Id="Int"  Label="Intro" State="false">
-			<Setting Id="cs_0030" Label="Wake Up After Moonquake" State="false"/>
-			<Setting Id="cs_0050" Label="Enter Tram" State="false"/>
+			<Setting Id="cs_0030" Label="Wake Up After Moonquake" State="true"/>
+			<Setting Id="cs_0050" Label="Enter Tram" State="true"/>
 		</Setting>
-		<Setting Id="Sol"  Label="Solar Power Plant" State="false">
+		<Setting Id="Sol"  Label="Solar Power Plant" State="true">
+			<Setting Id="891687283_7_2" Label="Arrived at Solar Power Plant" State="true"/>
 			<Setting Id="1065337910_1_2" Label="Turn on Generators" State="false"/>
 			<Setting Id="3702464428_1_2" Label="Hack First Power Terminal" State="false"/>
 			<Setting Id="3866905711_1_2" Label="Hack Second Power Terminal" State="false"/>
@@ -12,22 +13,72 @@
 			<Setting Id="3757168098_1_2" Label="Hack Fourth Power Terminal" State="false"/>
 			<Setting Id="700904805_1_2" Label="Hack Fifth Power Terminal" State="false"/>
 			<Setting Id="1539364293_New" Label="Enter Five Lock Door" State="false"/>
-			<Setting Id="cs_0240" Label="First Earth Memory" State="false"/>
-			<Setting Id="cs_0250" Label="First Boss Start" State="false"/>
+			<Setting Id="cs_0240" Label="First Earth Memory" State="true"/>
+			<Setting Id="cs_0250" Label="First Boss Start" State="true"/>
 			<Setting Id="cs_0260" Label="2nd Phase Start" State="false"/>
-			<Setting Id="cs_0270" Label="Defeat First Boss" State="false"/>
+			<Setting Id="cs_0270" Label="Defeated First Boss" State="true"/>
 		</Setting>
-		<Setting Id="Mas"  Label="Mass Production Array" State="false">
+		<Setting Id="Mas"  Label="Mass Production Array" State="true">
+			<Setting Id="3955817672_New" Label="Arrive at MPA" State="true"/>
 			<Setting Id="1600715518_New" Label="Reach the City" State="false"/>
-			<Setting Id="3834797531_2_2" Label="Hack First Beacon" State="false"/>
-			<Setting Id="2902961450_2_2" Label="Hack Second Beacon" State="false"/>
-			<Setting Id="979149566_2_2" Label="Hack Third Beacon" State="false"/>
-			<Setting Id="3056204639_2_2" Label="Hack Fourth Beacon" State="false"/>
-			<Setting Id="1395449153_2_2" Label="Hack Fifth Beacon" State="false"/>
+			<Setting Id="cs_0420" Label="Hack Gate Beacon" State="false"/>
+			<Setting Id="3834797531_2_2" Label="Hack First Beacon" State="true"/>
+			<Setting Id="2902961450_2_2" Label="Hack Second Beacon" State="true"/>
+			<Setting Id="979149566_2_2" Label="Hack Third Beacon" State="true"/>
+			<Setting Id="3056204639_2_2" Label="Hack Fourth Beacon" State="true"/>
+			<Setting Id="1395449153_2_2" Label="Hack Fifth Beacon" State="true"/>
 			<Setting Id="cs_0450" Label="Get Upgrade" State="false"/>
-			<Setting Id="2193165103_2_2" Label="Hack Final Beacon" State="false"/>
-			<Setting Id="cs_0460" Label="Second Boss Start" State="false"/>
-			<Setting Id="cs_0480" Label="Defeat Second Boss" State="false"/>
+			<Setting Id="2193165103_2_2" Label="Hack Final Beacon" State="true"/>
+			<Setting Id="cs_0460" Label="Second Boss Start" State="true"/>
+			<Setting Id="cs_0480" Label="Defeated Second Boss" State="true"/>
+		</Setting>
+		<Setting Id="Ter"  Label="Terra Dome" State="true">
+			<Setting Id="1195421821_New" Label="Reach Terradome" State="true"/>
+			<Setting Id="md13000" Label="Cat Hologram" State="false"/>
+			<Setting Id="md10011" Label="First Tree Jump" State="false"/>
+			<Setting Id="2815786312_3_2" Label="Eco Modeling Lab Wing #1" State="true"/>
+			<Setting Id="4211333439_3_2" Label="Eco Modeling Lab Wing #2" State="true"/>
+			<Setting Id="cs_0630" Label="GeoScience Lab - Beach" State="false"/>
+			<Setting Id="cs_0640" Label="Third Boss Start" State="true"/>
+			<Setting Id="2483724598_3_2" Label="Defeated Third Boss" State="true"/>
+			<!-- <Setting Id="2483724598_3_2" Label="Rebooting Lim Regulator" State="false"/> -->
+		</Setting>
+		<Setting Id="Lun"  Label="Lunum Mines" State="true">
+			<Setting Id="1951146122_New" Label="Reach Lunum Mines" State="true"/>
+			<Setting Id="md14000" Label="Exited Mine Entrance" State="false"/>
+			<Setting Id="2332782106_4_2" Label="Entered Warehouse" State="true"/>
+			<Setting Id="3825606354_4_2" Label="Reached Warehouse Platform" State="false"/>
+			<Setting Id="2238826897_New" Label="Warehouse Platform Started" State="true"/>
+			<Setting Id="1219829501_New" Label="Main Excavation Site Reached" State="false"/>
+			<Setting Id="1178259737_New" Label="Logistics Management Station Entered" State="false"/>
+			<Setting Id="2282121334_4_2" Label="Underground Tunnel" State="true"/>
+			<Setting Id="cs_0820" Label="Fourth Boss Start" State="true"/>
+			<Setting Id="2422551082_4_2" Label="Defeated Fourth Boss" State="true"/>
+			<Setting Id="ev_7350" Label="Entered Nexus Tower" State="false"/>
+		</Setting>
+		<Setting Id="Pra"  Label="Pragmatics" State="true">
+			<Setting Id="4113410636_5_2" Label="Experimental Pragmatics Start" State="true"/>
+			<Setting Id="md41051" Label="Higgins &amp; Eight Cutscene Before Elevator" State="true"/>
+			<Setting Id="cs_0915" Label="Last Fight Split" State="true"/>
+			<Setting Id="cs_0925" Label="Diana Revived" State="false"/>
+			<Setting Id="581005869_5_2" Label="Returned to Shelter" State="true"/>
+		</Setting>
+		<Setting Id="Cen"  Label="Central Port" State="true">
+			<Setting Id="2577348810_New" Label="Arrived at Central Port" State="false"/>
+			<Setting Id="md41060" Label="Cargo Lift" State="true"/>
+			<Setting Id="15239569_6_2" Label="Reached Regolith Lab" State="true"/>
+			<Setting Id="md41061" Label="Regolith Lab Fight Start" State="false"/>
+			<Setting Id="3990509957_6_2" Label="Tree Cleansed" State="true"/>
+			<Setting Id="835201196_New" Label="Lock #1" State="true"/>
+			<Setting Id="1403255026_New" Label="Lock #2" State="true"/>
+			<Setting Id="md16000" Label="Miniboss Start" State="false"/>
+			<!-- <Setting Id="md09000_00" Label="Miniboss Dead" State="true"/> this one is wrong too -->
+			<Setting Id="cs_1005" Label="Higgins &amp; Eight Cutscene After Miniboss" State="false"/>
+			<Setting Id="cs_1010" Label="Eight Boss Start" State="true"/>
+			<Setting Id="3832291954_7_2" Label="Defeated Eight Boss" State="true"/>
+			<Setting Id="cs_1040" Label="Abiosis Dead" State="true"/>
+			<Setting Id="cs_1050" Label="Find the Sea" State="true"/>
+			<Setting Id="cs_1100" Label="Post-Credits Cutscene" State="false"/>
 		</Setting>
 	</Setting>
 </Settings>
