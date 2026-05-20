@@ -13,7 +13,7 @@ startup
 	vars.Helper.Settings.CreateFromXml("Components/Pragmata.Settings.xml");
 	
 	// Asks user to change to game time if LiveSplit is currently set to Real Time.
-		if (timer.CurrentTimingMethod == TimingMethod.RealTime)
+	if (timer.CurrentTimingMethod == TimingMethod.RealTime)
     {        
         var timingMessage = MessageBox.Show (
             "This game uses In Game Time as the main timing method.\n"+
@@ -132,11 +132,11 @@ update
 		current.MiniDemos[i] = vars.Helper.ReadString(300, ReadStringType.UTF16, vars.MiniDemoManager, 0x10, 0x10, 0x20 + (i * 0x8), 0x10, 0x28, 0x14);
 	
 	
-	if(!string.IsNullOrEmpty(current.DemoID)){
+	if (!string.IsNullOrEmpty(current.DemoID)) {
         current.Demo = current.DemoID.Substring(2,4);
     }
 	
-	if(!string.IsNullOrEmpty(current.MovieID)){
+	if (!string.IsNullOrEmpty(current.MovieID)) {
         current.Movie = current.MovieID.Substring(2,4);
     }
 }
@@ -154,7 +154,8 @@ split
 	string MovieSetting = "";
 	string ConvoSetting = "";
 	
-	for (int i = 0; i < current.ObjectiveSize; i++){
+	for (int i = 0; i < current.ObjectiveSize; i++)
+	{
 		uint mission = vars.Helper.Read<uint>(vars.ObjectiveManager, 0x30, 0x10, 0x20 + (i * 0x8), 0x10);
 		byte chapter = vars.Helper.Read<byte>(vars.ObjectiveManager, 0x30, 0x10, 0x20 + (i * 0x8), 0x20);
 		byte complete = vars.Helper.Read<byte>(vars.ObjectiveManager, 0x30, 0x10, 0x20 + (i * 0x8), 0x24);
@@ -163,103 +164,110 @@ split
 		if (vars.Objective.TryGetValue(mission, out oldComplete))
 		{
 			
-			if (complete == 2 && oldComplete != 2 && !vars.completedQuests.Contains(mission)){
+			if (complete == 2 && oldComplete != 2 && !vars.completedQuests.Contains(mission)) {
 				MCompSetting = mission + "_" + chapter + "_" + complete;
 				vars.completedQuests.Add(mission);
 			}
 				
-			if(!vars.completedSplits.Contains(MCompSetting)){
-					if (settings.ContainsKey(MCompSetting) && settings[MCompSetting]){
+			if (!vars.completedSplits.Contains(MCompSetting)) {
+				if (settings.ContainsKey(MCompSetting) && settings[MCompSetting]) {
 					vars.PendingSplits++;
 				}
 			}
 				
-			if (!string.IsNullOrEmpty(MCompSetting))
-			vars.Log(MCompSetting);
+			if (!string.IsNullOrEmpty(MCompSetting)) {
+				vars.Log("MCompSetting: " + MCompSetting);
+			}
 		}
 		
 		vars.Objective[mission] = complete;
 	}
 	
-	if(current.ObjectiveSize != old.ObjectiveSize){
-		for (int i = 0; i < current.ObjectiveSize; i++) {
-			
+	if (current.ObjectiveSize != old.ObjectiveSize) { //'System.Dynamic.ExpandoObject' does not contain a definition for 'ObjectiveSize'
+		for (int i = 0; i < current.ObjectiveSize; i++)
+		{
 			uint mission = vars.Helper.Read<uint>(vars.ObjectiveManager, 0x30, 0x10, 0x20 + (i * 0x8), 0x10);
 			var missions = current.Quests[i];
 		  
-				if(missions != 0 && !vars.QuestList.Contains(mission)){
+			if (missions != 0 && !vars.QuestList.Contains(mission)) {
 				MStartSetting = missions + "_New";
 				vars.QuestList.Add(mission);
 			}
+
+			if (!string.IsNullOrEmpty(MStartSetting)) {
+				vars.Log("MStartSetting: " + MStartSetting);
+			}
 			
-			if(!vars.completedSplits.Contains(MStartSetting)){
-					if (settings.ContainsKey(MStartSetting) && settings[MStartSetting]){
+			if (!vars.completedSplits.Contains(MStartSetting)) {
+				if (settings.ContainsKey(MStartSetting) && settings[MStartSetting]) {
 					vars.PendingSplits++;
 				}
 			}
 			
-			if (!string.IsNullOrEmpty(MStartSetting))
-			vars.Log(MStartSetting);
 		}
 	}
 	
-	if(!string.IsNullOrEmpty(current.DemoID) && current.DemoStatus && !old.DemoStatus){
+	if (!string.IsNullOrEmpty(current.DemoID) && current.DemoStatus && !old.DemoStatus) {
 		DemoSetting = "cs_" + current.Demo;
-			
-		if (!string.IsNullOrEmpty(DemoSetting))
-		vars.Log(DemoSetting);
-	
-		if(!vars.completedSplits.Contains(DemoSetting)){
-				if (settings.ContainsKey(DemoSetting) && settings[DemoSetting]){
+
+		if (!string.IsNullOrEmpty(DemoSetting)) {
+			vars.Log("DemoSetting: " + DemoSetting);
+		}
+
+		if (!vars.completedSplits.Contains(DemoSetting)) {
+			if (settings.ContainsKey(DemoSetting) && settings[DemoSetting]) {
 				vars.PendingSplits++;
 			}
 		}
 	}
 	
-	if(!string.IsNullOrEmpty(current.MovieID) && current.MovieStatus && !old.MovieStatus){
+	if (!string.IsNullOrEmpty(current.MovieID) && current.MovieStatus && !old.MovieStatus) {
 		MovieSetting = "ev_" + current.Movie;
-			
-		if (!string.IsNullOrEmpty(MovieSetting))
-		vars.Log(MovieSetting);
-	
-		if(!vars.completedSplits.Contains(MovieSetting)){
-				if (settings.ContainsKey(MovieSetting) && settings[MovieSetting]){
+
+		if (!string.IsNullOrEmpty(MovieSetting)) {
+			vars.Log("MovieSetting: " + MovieSetting);
+		}
+
+		if (!vars.completedSplits.Contains(MovieSetting)) {
+			if (settings.ContainsKey(MovieSetting) && settings[MovieSetting]) {
 				vars.PendingSplits++;
 			}
 		}
 	}
 	
-	/*if((old.MiniDemoPhase == 0 || old.MiniDemoPhase == 1) && current.MiniDemoPhase == 2){
+	/*if ((old.MiniDemoPhase == 0 || old.MiniDemoPhase == 1) && current.MiniDemoPhase == 2) {
 		ConvoSetting = "mini_" + current.MiniDemoID;
 			
 		if (!string.IsNullOrEmpty(ConvoSetting))
-		vars.Log(ConvoSetting);
+			vars.Log(ConvoSetting);
 	
-		if(!vars.completedSplits.Contains(ConvoSetting)){
-				if (settings.ContainsKey(ConvoSetting) && settings[ConvoSetting]){
+		if (!vars.completedSplits.Contains(ConvoSetting)) {
+			if (settings.ContainsKey(ConvoSetting) && settings[ConvoSetting]) {
 				vars.PendingSplits++;
 			}
 		}
 	}
 	*/
 	
-	if(current.MiniDemoSize != old.MiniDemoSize){
+	if (current.MiniDemoSize != old.MiniDemoSize) {
 		for (int i = 0; i < current.MiniDemoSize; i++) {
 			
 			var minidemo = current.MiniDemos[i];
 
-			if(!string.IsNullOrEmpty(minidemo)){
+			if (!string.IsNullOrEmpty(minidemo)) {
 				MiniDemoSetting = minidemo.ToString();
 			}
+
+			if (!string.IsNullOrEmpty(MiniDemoSetting)) {
+				vars.Log("MiniDemoSetting: " + MiniDemoSetting);
+			}
 			
-			if(!vars.completedSplits.Contains(MiniDemoSetting)){
-					if (settings.ContainsKey(MiniDemoSetting) && settings[MiniDemoSetting]){
+			if (!vars.completedSplits.Contains(MiniDemoSetting)) {
+				if (settings.ContainsKey(MiniDemoSetting) && settings[MiniDemoSetting]) {
 					vars.PendingSplits++;
 				}
 			}
 			
-			if (!string.IsNullOrEmpty(MiniDemoSetting))
-			vars.Log(MiniDemoSetting);
 		}
 	}
 	
