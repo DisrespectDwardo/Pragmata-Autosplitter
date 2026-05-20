@@ -172,6 +172,8 @@ split
 			if (!vars.completedSplits.Contains(MCompSetting)) {
 				if (settings.ContainsKey(MCompSetting) && settings[MCompSetting]) {
 					vars.PendingSplits++;
+					//vars.Log("DEBUG MCompSetting: " + MCompSetting);
+					break;
 				}
 			}
 				
@@ -201,6 +203,8 @@ split
 			if (!vars.completedSplits.Contains(MStartSetting)) {
 				if (settings.ContainsKey(MStartSetting) && settings[MStartSetting]) {
 					vars.PendingSplits++;
+					//vars.Log("DEBUG MStartSetting: " + MStartSetting);
+					break;
 				}
 			}
 			
@@ -217,6 +221,7 @@ split
 		if (!vars.completedSplits.Contains(DemoSetting)) {
 			if (settings.ContainsKey(DemoSetting) && settings[DemoSetting]) {
 				vars.PendingSplits++;
+				//vars.Log("DEBUG DemoSetting: " + DemoSetting);
 			}
 		}
 	}
@@ -231,6 +236,7 @@ split
 		if (!vars.completedSplits.Contains(MovieSetting)) {
 			if (settings.ContainsKey(MovieSetting) && settings[MovieSetting]) {
 				vars.PendingSplits++;
+				//vars.Log("DEBUG: MovieSetting: " + MovieSetting);
 			}
 		}
 	}
@@ -265,6 +271,8 @@ split
 			if (!vars.completedSplits.Contains(MiniDemoSetting)) {
 				if (settings.ContainsKey(MiniDemoSetting) && settings[MiniDemoSetting]) {
 					vars.PendingSplits++;
+					//vars.Log("DEBUG: MiniDemoSetting: " + MiniDemoSetting);
+					break;
 				}
 			}
 			
@@ -275,7 +283,8 @@ split
 	
 	if (vars.PendingSplits > 0)
 	{
-		vars.PendingSplits--;
+		//vars.Log("SPLIT: vars.PendingSplits: " + vars.PendingSplits);
+		vars.PendingSplits--; //maybe just clear this to 0
 		vars.completedSplits.Add(MStartSetting);
 		vars.completedSplits.Add(MCompSetting);
 		vars.completedSplits.Add(DemoSetting);
