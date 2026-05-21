@@ -2,6 +2,7 @@
 //Supports LRT and Game Splits
 //Script & Pointers by TheDementedSalad
 //Cutscene/Event pointers by Rumii
+//Loop breaking idea and most splits by Ashley93o
 
 state("PRAGMATA"){
 }
