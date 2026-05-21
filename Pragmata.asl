@@ -172,7 +172,7 @@ split
 			if (!vars.completedSplits.Contains(MCompSetting)) {
 				if (settings.ContainsKey(MCompSetting) && settings[MCompSetting]) {
 					vars.PendingSplits++;
-					//vars.Log("DEBUG MCompSetting: " + MCompSetting);
+					vars.Log("DEBUG MCompSetting: " + MCompSetting);
 					break;
 				}
 			}
@@ -195,19 +195,18 @@ split
 				MStartSetting = missions + "_New";
 				vars.QuestList.Add(mission);
 			}
-
-			if (!string.IsNullOrEmpty(MStartSetting)) {
-				vars.Log("MStartSetting: " + MStartSetting);
-			}
 			
 			if (!vars.completedSplits.Contains(MStartSetting)) {
 				if (settings.ContainsKey(MStartSetting) && settings[MStartSetting]) {
 					vars.PendingSplits++;
-					//vars.Log("DEBUG MStartSetting: " + MStartSetting);
+					vars.Log("DEBUG MStartSetting: " + MStartSetting);
 					break;
 				}
 			}
 			
+			if (!string.IsNullOrEmpty(MStartSetting)) {
+				vars.Log("MStartSetting: " + MStartSetting);
+			}
 		}
 	}
 	
@@ -221,7 +220,7 @@ split
 		if (!vars.completedSplits.Contains(DemoSetting)) {
 			if (settings.ContainsKey(DemoSetting) && settings[DemoSetting]) {
 				vars.PendingSplits++;
-				//vars.Log("DEBUG DemoSetting: " + DemoSetting);
+				vars.Log("DEBUG DemoSetting: " + DemoSetting);
 			}
 		}
 	}
@@ -229,53 +228,54 @@ split
 	if (!string.IsNullOrEmpty(current.MovieID) && current.MovieStatus && !old.MovieStatus) {
 		MovieSetting = "ev_" + current.Movie;
 
-		if (!string.IsNullOrEmpty(MovieSetting)) {
-			vars.Log("MovieSetting: " + MovieSetting);
-		}
-
 		if (!vars.completedSplits.Contains(MovieSetting)) {
 			if (settings.ContainsKey(MovieSetting) && settings[MovieSetting]) {
 				vars.PendingSplits++;
-				//vars.Log("DEBUG: MovieSetting: " + MovieSetting);
+				vars.Log("DEBUG: MovieSetting: " + MovieSetting);
 			}
+		}
+
+		if (!string.IsNullOrEmpty(MovieSetting)) {
+			vars.Log("MovieSetting: " + MovieSetting);
 		}
 	}
 	
 	/*if ((old.MiniDemoPhase == 0 || old.MiniDemoPhase == 1) && current.MiniDemoPhase == 2) {
 		ConvoSetting = "mini_" + current.MiniDemoID;
-			
-		if (!string.IsNullOrEmpty(ConvoSetting))
-			vars.Log(ConvoSetting);
-	
+
 		if (!vars.completedSplits.Contains(ConvoSetting)) {
 			if (settings.ContainsKey(ConvoSetting) && settings[ConvoSetting]) {
+				vars.Log("DEBUG ConvoSetting: " + ConvoSetting);
 				vars.PendingSplits++;
 			}
+		}
+
+		if (!string.IsNullOrEmpty(ConvoSetting)) {
+			vars.Log(ConvoSetting);
 		}
 	}
 	*/
 	
 	if (current.MiniDemoSize != old.MiniDemoSize) {
-		for (int i = 0; i < current.MiniDemoSize; i++) {
-			
+		for (int i = 0; i < current.MiniDemoSize; i++)
+		{
 			var minidemo = current.MiniDemos[i];
 
 			if (!string.IsNullOrEmpty(minidemo)) {
 				MiniDemoSetting = minidemo.ToString();
 			}
 
-			if (!string.IsNullOrEmpty(MiniDemoSetting)) {
-				vars.Log("MiniDemoSetting: " + MiniDemoSetting);
-			}
-			
 			if (!vars.completedSplits.Contains(MiniDemoSetting)) {
 				if (settings.ContainsKey(MiniDemoSetting) && settings[MiniDemoSetting]) {
 					vars.PendingSplits++;
-					//vars.Log("DEBUG: MiniDemoSetting: " + MiniDemoSetting);
+					vars.Log("DEBUG: MiniDemoSetting: " + MiniDemoSetting);
 					break;
 				}
 			}
-			
+
+			if (!string.IsNullOrEmpty(MiniDemoSetting)) {
+				vars.Log("MiniDemoSetting: " + MiniDemoSetting);
+			}
 		}
 	}
 	
@@ -283,7 +283,7 @@ split
 	
 	if (vars.PendingSplits > 0)
 	{
-		//vars.Log("SPLIT: vars.PendingSplits: " + vars.PendingSplits);
+		vars.Log("SPLIT: vars.PendingSplits: " + vars.PendingSplits);
 		vars.PendingSplits--; //maybe just clear this to 0
 		vars.completedSplits.Add(MStartSetting);
 		vars.completedSplits.Add(MCompSetting);
