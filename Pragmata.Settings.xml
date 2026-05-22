@@ -21,8 +21,7 @@
 		<Setting Id="Mas"  Label="Mass Production Array" State="true">
 			<Setting Id="3955817672_New" Label="Arrive at MPA" State="true"/>
 			<Setting Id="1600715518_New" Label="Reach the City" State="false"/>
-			<Setting Id="cs_0420" Label="Enter shopping district" State="false"/>
-			<Setting Id="3834797531_2_2" Label="Hack First Beacon" State="true"/>
+			<Setting Id="cs_0420" Label="Hack First Beacon" State="false"/>
 			<Setting Id="979149566_New" Label="Hack Second Beacon" State="true"/>
 			<Setting Id="979149566_2_2" Label="Hack Third Beacon" State="true"/>
 			<Setting Id="3056204639_2_2" Label="Hack Fourth Beacon" State="true"/>
@@ -78,7 +77,7 @@
 			<Setting Id="835201196_New" Label="Lock #1" State="true"/>
 			<Setting Id="1403255026_New" Label="Lock #2" State="true"/>
 			<Setting Id="md16000" Label="Miniboss Start" State="false"/>
-			<Setting Id="3994499749_New" Label="Miniboss Dead" State="true"/>
+			<Setting Id="3994499749_6_2" Label="Miniboss Dead" State="true"/>
 			<Setting Id="cs_1005" Label="Higgins &amp; Eight Cutscene After Miniboss" State="false"/>
 			<Setting Id="cs_1010" Label="Eight Boss Start" State="true"/>
 			<Setting Id="3832291954_7_2" Label="Defeated Eight Boss" State="true"/>
