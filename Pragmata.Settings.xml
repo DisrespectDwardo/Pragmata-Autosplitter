@@ -71,9 +71,9 @@
 		<Setting Id="Cen"  Label="Central Port" State="true">
 			<Setting Id="2577348810_New" Label="Arrived at Central Port" State="true"/>
 			<Setting Id="md41060" Label="Cargo Lift" State="true"/>
-			<Setting Id="15239569_6_2" Label="Reached Regolith Lab" State="true"/>
+			<Setting Id="3990509957_New" Label="Reached Regolith Lab" State="true"/>
 			<Setting Id="md41061" Label="Regolith Lab Fight Start" State="false"/>
-			<Setting Id="3990509957_6_2" Label="Tree Cleansed" State="true"/>
+			<Setting Id="3123686876_New" Label="Tree Cleansed" State="true"/>
 			<Setting Id="835201196_New" Label="Lock #1" State="true"/>
 			<Setting Id="1403255026_New" Label="Lock #2" State="true"/>
 			<Setting Id="md16000" Label="Miniboss Start" State="false"/>
