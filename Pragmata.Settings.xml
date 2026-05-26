@@ -75,6 +75,7 @@
 			<Setting Id="md41061" Label="Regolith Lab Fight Start" State="false"/>
 			<Setting Id="3123686876_New" Label="Tree Cleansed" State="true"/>
 			<Setting Id="835201196_New" Label="Lock #1" State="true"/>
+			<Setting Id="md16004" Label="Deadly Conclusion Holo" State="false"/>
 			<Setting Id="1403255026_New" Label="Lock #2" State="true"/>
 			<Setting Id="md16000" Label="Miniboss Start" State="false"/>
 			<Setting Id="3994499749_6_2" Label="Miniboss Dead" State="true"/>
