@@ -113,7 +113,7 @@ onStart
 
 start
 {
-	return current.DemoID != old.DemoID && (current.DemoID == "cs0010" || current.DemoID == "cs0110");
+	return current.DemoID != old.DemoID && (current.DemoID == "cs0010" || old.DemoID == "cs0110"); //intro-skip starts after skipping first cutscene, fullgame starts right when hitting new game
 }
 
 
